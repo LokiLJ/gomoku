@@ -9,44 +9,29 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #1a1a2e;
-            color: #eee;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
+            background: #1a1a2e; color: #eee;
+            min-height: 100vh; display: flex; flex-direction: column;
+            align-items: center; padding: 20px;
         }
 
-        /* ======== 登录 & 用户名页面 ======== */
+        /* ======== 遮罩层 ======== */
         .overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: #1a1a2e;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
+            position: fixed; top:0;left:0;right:0;bottom:0;
+            background: #1a1a2e; display: flex;
+            align-items: center; justify-content: center; z-index: 1000;
         }
-
         .overlay.hidden { display: none; }
 
         .box {
-            background: #16213e;
-            padding: 40px;
-            border-radius: 16px;
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
+            background: #16213e; padding: 40px; border-radius: 16px;
+            text-align: center; max-width: 400px; width: 90%;
             box-shadow: 0 8px 32px rgba(0,0,0,0.5);
         }
-
         .box h1 { font-size: 28px; color: #e0c068; margin-bottom: 8px; }
         .box .subtitle { color: #999; font-size: 14px; margin-bottom: 24px; }
         .box .question { background: #1a1a2e; padding: 12px 16px; border-radius: 8px; margin-bottom: 8px; font-size: 14px; text-align: left; color: #ccc; }
         .box .question span { color: #e0c068; }
         .box .hint { color: #666; font-size: 12px; margin-bottom: 20px; }
-
         .box input {
             width: 100%; padding: 12px 16px; font-size: 18px;
             border: 2px solid #333; border-radius: 8px;
@@ -56,7 +41,6 @@
         .box input:focus { border-color: #e0c068; }
         .box input.name-input { letter-spacing: normal; font-size: 16px; }
         .box input.code-input { letter-spacing: 4px; }
-
         .box button, .btn {
             width: 100%; padding: 12px; font-size: 16px; font-weight: bold;
             border: none; border-radius: 8px; background: #e0c068; color: #1a1a2e;
@@ -68,84 +52,35 @@
         /* ======== 游戏主界面 ======== */
         #gameContainer { display: none; flex-direction: column; align-items: center; width: 100%; max-width: 700px; }
 
-        .game-header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-            gap: 12px;
-        }
+        .game-header { width: 100%; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; gap: 12px; }
 
         /* 积分榜 */
-        .scoreboard {
-            background: #16213e;
-            border-radius: 10px;
-            padding: 12px 16px;
-            min-width: 160px;
-            max-width: 200px;
-        }
-
-        .scoreboard h3 {
-            font-size: 14px;
-            color: #e0c068;
-            margin-bottom: 8px;
-            text-align: center;
-        }
-
-        .scoreboard .score-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 4px 0;
-            font-size: 13px;
-            border-bottom: 1px solid #1a1a2e;
-        }
-
+        .scoreboard { background: #16213e; border-radius: 10px; padding: 12px 16px; min-width: 160px; max-width: 200px; }
+        .scoreboard h3 { font-size: 14px; color: #e0c068; margin-bottom: 8px; text-align: center; }
+        .scoreboard .score-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 13px; border-bottom: 1px solid #1a1a2e; }
         .scoreboard .score-row:last-child { border: none; }
         .scoreboard .score-name { color: #ccc; max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .scoreboard .score-val { color: #e0c068; font-weight: bold; }
         .scoreboard .empty { color: #555; font-size: 12px; text-align: center; padding: 8px 0; }
 
-        /* 中间标题 */
-        .game-title {
-            text-align: center;
-            flex: 1;
-        }
+        .game-title { text-align: center; flex: 1; }
         .game-title h1 { font-size: 24px; color: #e0c068; }
 
-        /* 设置按钮 */
         .settings-btn {
-            background: #16213e;
-            border: none;
-            border-radius: 10px;
-            padding: 12px;
-            cursor: pointer;
-            color: #999;
-            font-size: 22px;
-            transition: all 0.2s;
-            min-width: 48px;
-            min-height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #16213e; border: none; border-radius: 10px; padding: 12px;
+            cursor: pointer; color: #999; font-size: 22px; transition: all 0.2s;
+            min-width: 48px; min-height: 48px; display: flex; align-items: center; justify-content: center;
         }
         .settings-btn:hover { background: #1e2d50; color: #e0c068; }
 
-        /* 信息栏 */
-        .info-bar {
-            display: flex; gap: 12px; margin-bottom: 12px;
-            flex-wrap: wrap; justify-content: center;
-        }
-        .info-item {
-            background: #16213e; padding: 6px 14px;
-            border-radius: 8px; font-size: 13px;
-        }
+        .info-bar { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; justify-content: center; }
+        .info-item { background: #16213e; padding: 6px 14px; border-radius: 8px; font-size: 13px; }
         .info-item.role-black { border-left: 4px solid #111; }
         .info-item.role-white { border-left: 4px solid #fff; }
         .info-item.role-spectator { border-left: 4px solid #888; }
 
         #status {
-            font-size: 16px; margin-bottom: 12px; padding: 8px 18px;
+            font-size: 16px; margin-bottom: 8px; padding: 8px 18px;
             border-radius: 8px; background: #16213e; text-align: center;
             min-height: 40px; display: flex; align-items: center; justify-content: center;
         }
@@ -154,19 +89,69 @@
         #status.winner { background: #2d5016; border: 2px solid #4caf50; }
         #status.waiting { border: 2px solid #e0c068; }
 
+        /* 计时条 */
+        .timer-bar-container {
+            width: 100%; max-width: 600px; height: 8px;
+            background: #16213e; border-radius: 4px;
+            margin-bottom: 12px; overflow: hidden;
+            position: relative;
+        }
+        .timer-bar {
+            height: 100%; border-radius: 4px;
+            transition: width 1s linear, background-color 0.5s;
+            width: 100%; background: #4caf50;
+        }
+        .timer-bar.warning { background: #ff9800; }
+        .timer-bar.danger { background: #f44336; }
+        .timer-bar.hidden { display: none; }
+
+        .timer-text {
+            font-size: 14px; color: #999; margin-bottom: 4px;
+            text-align: center; min-height: 20px;
+        }
+        .timer-text.warning { color: #ff9800; }
+        .timer-text.danger { color: #f44336; font-weight: bold; }
+
         canvas {
             border-radius: 8px; cursor: pointer;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             margin-bottom: 15px;
         }
 
-        .buttons { display: flex; gap: 12px; }
+        /* 按钮栏 */
+        .buttons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
         .buttons button {
-            padding: 8px 20px; font-size: 14px; border: none;
+            padding: 8px 18px; font-size: 13px; border: none;
             border-radius: 8px; cursor: pointer; width: auto;
-            background: #e0c068; color: #1a1a2e; font-weight: bold;
+            font-weight: bold; transition: all 0.2s;
         }
-        .buttons button:hover { background: #f0d078; }
+        .buttons button:hover { transform: translateY(-1px); }
+        .btn-primary { background: #e0c068; color: #1a1a2e; }
+        .btn-primary:hover { background: #f0d078; }
+        .btn-secondary { background: #2a3a5c; color: #ccc; border: 1px solid #444; }
+        .btn-secondary:hover { background: #344a6c; }
+        .btn-danger { background: #5c2a2a; color: #f88; border: 1px solid #844; }
+        .btn-danger:hover { background: #6c3434; }
+
+        /* 悔棋请求弹窗 */
+        .undo-request-popup {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: #16213e; border: 2px solid #e0c068; border-radius: 16px;
+            padding: 30px; text-align: center; z-index: 2500;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+            display: none; min-width: 280px;
+        }
+        .undo-request-popup.show { display: block; }
+        .undo-request-popup p { margin-bottom: 20px; font-size: 16px; }
+        .undo-request-popup .popup-buttons { display: flex; gap: 12px; justify-content: center; }
+        .undo-request-popup button {
+            padding: 10px 24px; font-size: 14px; border: none;
+            border-radius: 8px; cursor: pointer; font-weight: bold;
+        }
+        .undo-accept { background: #4caf50; color: #fff; }
+        .undo-accept:hover { background: #5cbf60; }
+        .undo-reject { background: #f44336; color: #fff; }
+        .undo-reject:hover { background: #f55; }
 
         .connection-dot {
             display: inline-block; width: 10px; height: 10px;
@@ -177,33 +162,21 @@
         .connection-dot.connecting { background: #ff9800; animation: blink 1s infinite; }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-        /* ======== 设置面板（模态框） ======== */
+        /* 模态框 */
         .modal-backdrop {
             position: fixed; top:0;left:0;right:0;bottom:0;
             background: rgba(0,0,0,0.7);
-            display: none; align-items: center; justify-content: center;
-            z-index: 2000;
+            display: none; align-items: center; justify-content: center; z-index: 2000;
         }
         .modal-backdrop.open { display: flex; }
-
         .modal {
-            background: #16213e;
-            border-radius: 16px;
-            padding: 30px;
-            max-width: 420px;
-            width: 90%;
-            max-height: 85vh;
-            overflow-y: auto;
+            background: #16213e; border-radius: 16px; padding: 30px;
+            max-width: 420px; width: 90%; max-height: 85vh; overflow-y: auto;
         }
-
         .modal h2 { color: #e0c068; font-size: 20px; margin-bottom: 20px; text-align: center; }
-
         .modal .section { margin-bottom: 20px; }
         .modal .section h3 { font-size: 14px; color: #999; margin-bottom: 10px; }
-
-        .modal .admin-lock {
-            text-align: center; padding: 20px 0;
-        }
+        .modal .admin-lock { text-align: center; padding: 20px 0; }
         .modal .admin-lock input {
             width: 180px; padding: 10px; font-size: 18px;
             border: 2px solid #333; border-radius: 8px;
@@ -215,25 +188,21 @@
         .modal .admin-lock .lock-status { font-size: 13px; margin-top: 8px; }
         .modal .admin-lock .lock-status.ok { color: #4caf50; }
         .modal .admin-lock .lock-status.fail { color: #f44336; }
-
         .admin-controls { display: none; }
         .admin-controls.unlocked { display: block; }
-
         .admin-btn {
             width: 100%; padding: 10px; font-size: 14px;
             border: 1px solid #333; border-radius: 8px;
             background: #1a1a2e; color: #ccc; cursor: pointer;
-            margin-bottom: 8px; transition: all 0.2s; text-align: left;
-            padding-left: 16px;
+            margin-bottom: 8px; transition: all 0.2s; text-align: left; padding-left: 16px;
         }
         .admin-btn:hover { background: #0f0f23; border-color: #e0c068; color: #e0c068; }
         .admin-btn.danger { border-color: #f44336; color: #f44336; }
         .admin-btn.danger:hover { background: #2a0a0a; }
-
         .admin-row {
             display: flex; gap: 8px; align-items: center; margin-bottom: 8px;
         }
-        .admin-row input {
+        .admin-row input, .admin-row select {
             flex: 1; padding: 8px; font-size: 14px;
             border: 1px solid #333; border-radius: 6px;
             background: #0f0f23; color: #eee; outline: none;
@@ -245,14 +214,12 @@
             white-space: nowrap; width: auto; margin-top: 0;
         }
         .admin-row button:hover { background: #e0c068; color: #1a1a2e; }
-
         .swap-section { margin-top: 12px; }
         .swap-section select {
             width: 100%; padding: 8px; font-size: 14px;
             border: 1px solid #333; border-radius: 6px;
             background: #0f0f23; color: #eee; margin-bottom: 8px;
         }
-
         .modal .close-btn {
             width: 100%; padding: 10px; font-size: 15px;
             border: none; border-radius: 8px;
@@ -260,23 +227,29 @@
         }
         .modal .close-btn:hover { background: #444; }
 
-        /* 管理员消息 toast */
         .toast {
             position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
             background: #16213e; border: 1px solid #e0c068; color: #e0c068;
             padding: 10px 24px; border-radius: 8px; font-size: 14px;
-            z-index: 3000; opacity: 0; transition: opacity 0.3s;
-            pointer-events: none;
+            z-index: 3000; opacity: 0; transition: opacity 0.3s; pointer-events: none;
         }
         .toast.show { opacity: 1; }
     </style>
 </head>
 <body>
 
-    <!-- Toast 通知 -->
     <div class="toast" id="toast"></div>
 
-    <!-- ======== 第一步：密码验证 ======== -->
+    <!-- 悔棋请求弹窗 -->
+    <div class="undo-request-popup" id="undoPopup">
+        <p id="undoPopupText">对手请求悔棋，是否同意？</p>
+        <div class="popup-buttons">
+            <button class="undo-accept" onclick="respondUndo(true)">✅ 同意</button>
+            <button class="undo-reject" onclick="respondUndo(false)">❌ 拒绝</button>
+        </div>
+    </div>
+
+    <!-- 第一步：密码 -->
     <div class="overlay" id="loginOverlay">
         <div class="box">
             <h1>♟ 五子棋</h1>
@@ -290,7 +263,7 @@
         </div>
     </div>
 
-    <!-- ======== 第二步：输入用户名 ======== -->
+    <!-- 第二步：用户名 -->
     <div class="overlay hidden" id="nameOverlay">
         <div class="box">
             <h1>♟ 五子棋</h1>
@@ -301,22 +274,15 @@
         </div>
     </div>
 
-    <!-- ======== 第三步：游戏界面 ======== -->
+    <!-- 第三步：游戏 -->
     <div id="gameContainer">
         <div class="game-header">
-            <!-- 左：积分榜 -->
             <div class="scoreboard" id="scoreboard">
                 <h3>🏆 积分榜</h3>
                 <div class="empty" id="scoreEmpty">暂无记录</div>
                 <div id="scoreList"></div>
             </div>
-
-            <!-- 中：标题 -->
-            <div class="game-title">
-                <h1>♟ 五子棋</h1>
-            </div>
-
-            <!-- 右：设置按钮 -->
+            <div class="game-title"><h1>♟ 五子棋</h1></div>
             <button class="settings-btn" onclick="openSettings()" title="设置">⚙️</button>
         </div>
 
@@ -331,26 +297,32 @@
 
         <div id="status" class="waiting">等待连接服务器...</div>
 
+        <!-- 计时器 -->
+        <div class="timer-text" id="timerText"></div>
+        <div class="timer-bar-container">
+            <div class="timer-bar" id="timerBar"></div>
+        </div>
+
         <div class="board-container">
             <canvas id="board" width="600" height="600"></canvas>
         </div>
 
         <div class="buttons">
-            <button onclick="requestReset()">重新开局</button>
+            <button class="btn-primary" onclick="requestReset()">重新开局</button>
+            <button class="btn-secondary" onclick="requestUndoFromOpponent()">申请悔棋</button>
+            <button class="btn-danger" onclick="confirmResign()">投子认负</button>
         </div>
     </div>
 
-    <!-- ======== 设置模态框 ======== -->
+    <!-- 设置模态框 -->
     <div class="modal-backdrop" id="settingsModal">
         <div class="modal">
             <h2>⚙️ 设置</h2>
-
             <div class="section">
                 <h3>房间信息</h3>
                 <div class="info-item" id="roomInfoDisplay" style="margin-bottom:8px;">房间人数: -</div>
                 <div class="info-item" id="playerListDisplay">在线玩家: -</div>
             </div>
-
             <div class="section">
                 <h3>🔒 管理员验证</h3>
                 <div class="admin-lock">
@@ -359,14 +331,20 @@
                     <div class="lock-status" id="adminStatus"></div>
                 </div>
             </div>
-
             <div class="admin-controls" id="adminControls">
                 <div class="section">
                     <h3>游戏控制</h3>
                     <button class="admin-btn" onclick="adminSwapColors()">🔄 交换黑白方（棋局重置）</button>
-                    <button class="admin-btn" onclick="adminUndo()">↩️ 悔棋（撤销最后一步）</button>
+                    <button class="admin-btn" onclick="adminUndo()">↩️ 强制悔棋（管理员）</button>
                 </div>
-
+                <div class="section">
+                    <h3>计时器设置</h3>
+                    <div class="admin-row">
+                        <input type="number" id="timerInput" min="0" max="300" value="20" placeholder="秒数（0=不限时）">
+                        <button onclick="adminChangeTimer()">更改时间</button>
+                    </div>
+                    <div style="color:#666;font-size:12px;margin-top:4px;">设为 0 表示不限时</div>
+                </div>
                 <div class="section">
                     <h3>房间设置</h3>
                     <div class="admin-row">
@@ -374,25 +352,17 @@
                         <button onclick="adminChangeCapacity()">更改上限</button>
                     </div>
                 </div>
-
                 <div class="section swap-section">
                     <h3>交换棋手与观战者</h3>
-                    <select id="swapSpectator">
-                        <option value="">选择观战者</option>
-                    </select>
-                    <select id="swapPlayer">
-                        <option value="1">黑方</option>
-                        <option value="2">白方</option>
-                    </select>
+                    <select id="swapSpectator"><option value="">选择观战者</option></select>
+                    <select id="swapPlayer"><option value="1">黑方</option><option value="2">白方</option></select>
                     <button class="admin-btn" onclick="adminSwapSpectator()">🔄 执行交换（棋局重置）</button>
                 </div>
-
                 <div class="section">
                     <h3>危险操作</h3>
                     <button class="admin-btn danger" onclick="adminClearScores()">🗑️ 清空积分榜</button>
                 </div>
             </div>
-
             <button class="close-btn" onclick="closeSettings()">关闭</button>
         </div>
     </div>
@@ -401,423 +371,417 @@
         // ============================================================
         // 全局状态
         // ============================================================
-        const BOARD_SIZE = 15, CANVAS_SIZE = 600, PADDING = 25;
-        const CELL_SIZE = (CANVAS_SIZE - 2*PADDING) / (BOARD_SIZE-1);
+        const BOARD_SIZE=15, CANVAS_SIZE=600, PADDING=25;
+        const CELL_SIZE=(CANVAS_SIZE-2*PADDING)/(BOARD_SIZE-1);
 
-        let myColor = 0, myRole = "", myUsername = "";
-        let currentTurn = 1, winner = 0, gameStarted = false;
-        let board = Array.from({length:15}, ()=>Array(15).fill(0));
-        let lastMove = null;
-        let ws = null, reconnectTimer = null, reconnectDelay = 1000;
-        let adminUnlocked = false;
-        let playersInfo = {}, spectatorsInfo = [];
+        let myColor=0, myRole="", myUsername="";
+        let currentTurn=1, winner=0, gameStarted=false;
+        let board=Array.from({length:15},()=>Array(15).fill(0));
+        let lastMove=null;
+        let ws=null, reconnectTimer=null, reconnectDelay=1000;
+        let adminUnlocked=false;
+        let playersInfo={}, spectatorsInfo=[];
+        let timerRemaining=-1, timerTotal=20;
 
-        const canvas = document.getElementById("board");
-        const ctx = canvas.getContext("2d");
+        const canvas=document.getElementById("board");
+        const ctx=canvas.getContext("2d");
 
         // ============================================================
-        // 第一步：密码验证
+        // 登录
         // ============================================================
-        document.getElementById("answerInput").addEventListener("keydown", e => {
-            if (e.key === "Enter") submitAnswer();
-        });
+        document.getElementById("answerInput").addEventListener("keydown",e=>{if(e.key==="Enter")submitAnswer()});
 
-        async function submitAnswer() {
-            const input = document.getElementById("answerInput");
-            const err = document.getElementById("loginError");
-            const answer = input.value.trim();
-            if (!answer) { err.textContent = "请输入答案"; return; }
-            try {
-                const res = await fetch("/verify", {
-                    method: "POST",
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify({answer}),
-                });
-                const data = await res.json();
-                if (data.success) {
-                    sessionStorage.setItem("gomoku_auth", "1");
+        async function submitAnswer(){
+            const input=document.getElementById("answerInput");
+            const err=document.getElementById("loginError");
+            const answer=input.value.trim();
+            if(!answer){err.textContent="请输入答案";return;}
+            try{
+                const res=await fetch("/verify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({answer})});
+                const data=await res.json();
+                if(data.success){
+                    sessionStorage.setItem("gomoku_auth","1");
                     document.getElementById("loginOverlay").classList.add("hidden");
                     document.getElementById("nameOverlay").classList.remove("hidden");
                     document.getElementById("nameInput").focus();
-                } else {
-                    err.textContent = data.message || "回答错误";
-                    input.value = ""; input.focus();
-                }
-            } catch(e) { err.textContent = "网络错误"; }
+                }else{err.textContent=data.message||"回答错误";input.value="";input.focus();}
+            }catch(e){err.textContent="网络错误";}
         }
 
         // ============================================================
-        // 第二步：输入用户名
+        // 用户名
         // ============================================================
-        document.getElementById("nameInput").addEventListener("keydown", e => {
-            if (e.key === "Enter") submitName();
-        });
+        document.getElementById("nameInput").addEventListener("keydown",e=>{if(e.key==="Enter")submitName()});
 
-        function submitName() {
-            const input = document.getElementById("nameInput");
-            const err = document.getElementById("nameError");
-            const name = input.value.trim();
-            if (!name) { err.textContent = "请输入昵称"; return; }
-            if (name.length > 12) { err.textContent = "昵称最多12个字符"; return; }
-            myUsername = name;
-            sessionStorage.setItem("gomoku_username", name);
+        function submitName(){
+            const input=document.getElementById("nameInput");
+            const err=document.getElementById("nameError");
+            const name=input.value.trim();
+            if(!name){err.textContent="请输入昵称";return;}
+            if(name.length>12){err.textContent="昵称最多12个字符";return;}
+            myUsername=name;
+            sessionStorage.setItem("gomoku_username",name);
             document.getElementById("nameOverlay").classList.add("hidden");
-            document.getElementById("gameContainer").style.display = "flex";
+            document.getElementById("gameContainer").style.display="flex";
             startGame();
         }
 
-        // ============================================================
-        // 页面加载：检查是否已验证
-        // ============================================================
-        window.addEventListener("DOMContentLoaded", () => {
-            const auth = sessionStorage.getItem("gomoku_auth");
-            const savedName = sessionStorage.getItem("gomoku_username");
-            if (auth === "1" && savedName) {
-                myUsername = savedName;
-                document.getElementById("loginOverlay").classList.add("hidden");
-                document.getElementById("gameContainer").style.display = "flex";
-                startGame();
-            } else if (auth === "1") {
-                document.getElementById("loginOverlay").classList.add("hidden");
-                document.getElementById("nameOverlay").classList.remove("hidden");
-            }
+        window.addEventListener("DOMContentLoaded",()=>{
+            const auth=sessionStorage.getItem("gomoku_auth");
+            const saved=sessionStorage.getItem("gomoku_username");
+            if(auth==="1"&&saved){myUsername=saved;document.getElementById("loginOverlay").classList.add("hidden");document.getElementById("gameContainer").style.display="flex";startGame();}
+            else if(auth==="1"){document.getElementById("loginOverlay").classList.add("hidden");document.getElementById("nameOverlay").classList.remove("hidden");}
         });
 
         // ============================================================
-        // Canvas 绘制
+        // Canvas
         // ============================================================
-        function drawBoard() {
-            ctx.fillStyle = "#dcb35c";
-            ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-            ctx.strokeStyle = "#8b6914"; ctx.lineWidth = 1;
-            for (let i=0; i<BOARD_SIZE; i++) {
-                const p = PADDING + i*CELL_SIZE;
-                ctx.beginPath(); ctx.moveTo(PADDING,p); ctx.lineTo(CANVAS_SIZE-PADDING,p); ctx.stroke();
-                ctx.beginPath(); ctx.moveTo(p,PADDING); ctx.lineTo(p,CANVAS_SIZE-PADDING); ctx.stroke();
+        function drawBoard(){
+            ctx.fillStyle="#dcb35c";ctx.fillRect(0,0,CANVAS_SIZE,CANVAS_SIZE);
+            ctx.strokeStyle="#8b6914";ctx.lineWidth=1;
+            for(let i=0;i<BOARD_SIZE;i++){
+                const p=PADDING+i*CELL_SIZE;
+                ctx.beginPath();ctx.moveTo(PADDING,p);ctx.lineTo(CANVAS_SIZE-PADDING,p);ctx.stroke();
+                ctx.beginPath();ctx.moveTo(p,PADDING);ctx.lineTo(p,CANVAS_SIZE-PADDING);ctx.stroke();
             }
-            ctx.fillStyle = "#8b6914";
-            for (const [r,c] of [[3,3],[3,11],[11,3],[11,11],[7,7]]) {
-                ctx.beginPath(); ctx.arc(PADDING+c*CELL_SIZE, PADDING+r*CELL_SIZE, 4, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle="#8b6914";
+            for(const[r,c]of[[3,3],[3,11],[11,3],[11,11],[7,7]]){
+                ctx.beginPath();ctx.arc(PADDING+c*CELL_SIZE,PADDING+r*CELL_SIZE,4,0,Math.PI*2);ctx.fill();
             }
-            for (let r=0;r<BOARD_SIZE;r++) for (let c=0;c<BOARD_SIZE;c++)
-                if (board[r][c]!==0) drawStone(r,c,board[r][c]);
-            if (lastMove) {
-                const x=PADDING+lastMove.col*CELL_SIZE, y=PADDING+lastMove.row*CELL_SIZE;
-                ctx.strokeStyle = lastMove.color===1?"#fff":"#000"; ctx.lineWidth=2;
-                ctx.beginPath(); ctx.moveTo(x-6,y); ctx.lineTo(x+6,y); ctx.stroke();
-                ctx.beginPath(); ctx.moveTo(x,y-6); ctx.lineTo(x,y+6); ctx.stroke();
+            for(let r=0;r<BOARD_SIZE;r++)for(let c=0;c<BOARD_SIZE;c++)
+                if(board[r][c]!==0)drawStone(r,c,board[r][c]);
+            if(lastMove){
+                const x=PADDING+lastMove.col*CELL_SIZE,y=PADDING+lastMove.row*CELL_SIZE;
+                ctx.strokeStyle=lastMove.color===1?"#fff":"#000";ctx.lineWidth=2;
+                ctx.beginPath();ctx.moveTo(x-6,y);ctx.lineTo(x+6,y);ctx.stroke();
+                ctx.beginPath();ctx.moveTo(x,y-6);ctx.lineTo(x,y+6);ctx.stroke();
             }
         }
 
-        function drawStone(row, col, color) {
-            const x=PADDING+col*CELL_SIZE, y=PADDING+row*CELL_SIZE, r=CELL_SIZE*0.43;
-            ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2);
-            const g = ctx.createRadialGradient(x-3,y-3,2,x,y,r);
-            if (color===1) { g.addColorStop(0,"#555"); g.addColorStop(1,"#000"); }
-            else { g.addColorStop(0,"#fff"); g.addColorStop(1,"#ccc"); }
-            ctx.fillStyle=g; ctx.fill();
-            ctx.strokeStyle=color===1?"#000":"#999"; ctx.lineWidth=1; ctx.stroke();
+        function drawStone(row,col,color){
+            const x=PADDING+col*CELL_SIZE,y=PADDING+row*CELL_SIZE,r=CELL_SIZE*0.43;
+            ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);
+            const g=ctx.createRadialGradient(x-3,y-3,2,x,y,r);
+            if(color===1){g.addColorStop(0,"#555");g.addColorStop(1,"#000");}
+            else{g.addColorStop(0,"#fff");g.addColorStop(1,"#ccc");}
+            ctx.fillStyle=g;ctx.fill();
+            ctx.strokeStyle=color===1?"#000":"#999";ctx.lineWidth=1;ctx.stroke();
         }
 
-        // ============================================================
-        // 点击 & 悬停
-        // ============================================================
-        canvas.addEventListener("click", e => {
-            if (myColor===0||winner!==0||!gameStarted||currentTurn!==myColor) return;
+        canvas.addEventListener("click",e=>{
+            if(myColor===0||winner!==0||!gameStarted||currentTurn!==myColor)return;
             const rect=canvas.getBoundingClientRect();
-            const sx=CANVAS_SIZE/rect.width, sy=CANVAS_SIZE/rect.height;
+            const sx=CANVAS_SIZE/rect.width,sy=CANVAS_SIZE/rect.height;
             const col=Math.round(((e.clientX-rect.left)*sx-PADDING)/CELL_SIZE);
             const row=Math.round(((e.clientY-rect.top)*sy-PADDING)/CELL_SIZE);
-            if (row<0||row>=BOARD_SIZE||col<0||col>=BOARD_SIZE||board[row][col]!==0) return;
+            if(row<0||row>=BOARD_SIZE||col<0||col>=BOARD_SIZE||board[row][col]!==0)return;
             ws.send(JSON.stringify({type:"move",row,col}));
         });
 
-        canvas.addEventListener("mousemove", e => {
-            if (myColor===0||winner!==0||!gameStarted||currentTurn!==myColor) {
-                canvas.style.cursor="default"; drawBoard(); return;
-            }
+        canvas.addEventListener("mousemove",e=>{
+            if(myColor===0||winner!==0||!gameStarted||currentTurn!==myColor){canvas.style.cursor="default";drawBoard();return;}
             const rect=canvas.getBoundingClientRect();
-            const sx=CANVAS_SIZE/rect.width, sy=CANVAS_SIZE/rect.height;
+            const sx=CANVAS_SIZE/rect.width,sy=CANVAS_SIZE/rect.height;
             const col=Math.round(((e.clientX-rect.left)*sx-PADDING)/CELL_SIZE);
             const row=Math.round(((e.clientY-rect.top)*sy-PADDING)/CELL_SIZE);
             drawBoard();
-            if (row>=0&&row<BOARD_SIZE&&col>=0&&col<BOARD_SIZE&&board[row][col]===0) {
+            if(row>=0&&row<BOARD_SIZE&&col>=0&&col<BOARD_SIZE&&board[row][col]===0){
                 canvas.style.cursor="pointer";
-                ctx.beginPath(); ctx.arc(PADDING+col*CELL_SIZE,PADDING+row*CELL_SIZE,CELL_SIZE*0.43,0,Math.PI*2);
-                ctx.fillStyle=myColor===1?"rgba(0,0,0,0.3)":"rgba(255,255,255,0.3)"; ctx.fill();
-            } else canvas.style.cursor="default";
+                ctx.beginPath();ctx.arc(PADDING+col*CELL_SIZE,PADDING+row*CELL_SIZE,CELL_SIZE*0.43,0,Math.PI*2);
+                ctx.fillStyle=myColor===1?"rgba(0,0,0,0.3)":"rgba(255,255,255,0.3)";ctx.fill();
+            }else canvas.style.cursor="default";
         });
 
-        canvas.addEventListener("mouseleave", ()=>{ canvas.style.cursor="default"; drawBoard(); });
+        canvas.addEventListener("mouseleave",()=>{canvas.style.cursor="default";drawBoard();});
 
         // ============================================================
         // UI 更新
         // ============================================================
-        function updateStatus() {
-            const el=document.getElementById("status"); el.className="";
-            if (winner!==0) {
-                el.textContent = winner===-1?"平局！":(winner===myColor?
+        function updateStatus(){
+            const el=document.getElementById("status");el.className="";
+            if(winner!==0){
+                el.textContent=winner===-1?"平局！":(winner===myColor?
                     `🎉 你赢了！（${winner===1?'黑':'白'}方胜）`:`${winner===1?'黑':'白'}方获胜！`);
                 el.classList.add("winner");
-            } else if (!gameStarted) {
-                el.textContent="⏳ 等待对手加入..."; el.classList.add("waiting");
-            } else {
+            }else if(!gameStarted){
+                el.textContent="⏳ 等待对手加入...";el.classList.add("waiting");
+            }else{
                 const tn=currentTurn===1?"黑方":"白方";
-                const playerName = playersInfo[currentTurn] || "";
-                const turnLabel = playerName ? `${tn}（${playerName}）` : tn;
-                if (myColor===0) el.textContent=`观战中 — 当前 ${turnLabel} 落子`;
-                else el.textContent=currentTurn===myColor?`轮到你了（${tn}）`:`等待 ${turnLabel} 落子...`;
+                const pn=playersInfo[currentTurn]||"";
+                const tl=pn?`${tn}（${pn}）`:tn;
+                if(myColor===0)el.textContent=`观战中 — 当前 ${tl} 落子`;
+                else el.textContent=currentTurn===myColor?`轮到你了（${tn}）`:`等待 ${tl} 落子...`;
                 el.classList.add(currentTurn===1?"turn-black":"turn-white");
             }
         }
 
-        function updateRoleDisplay() {
-            const el=document.getElementById("roleInfo"); el.className="info-item";
-            if (myRole==="black") { el.textContent=`⚫ ${myUsername}（黑方·先手）`; el.classList.add("role-black"); }
-            else if (myRole==="white") { el.textContent=`⚪ ${myUsername}（白方·后手）`; el.classList.add("role-white"); }
-            else if (myRole==="spectator") { el.textContent=`👁 ${myUsername}（观战）`; el.classList.add("role-spectator"); }
+        function updateRoleDisplay(){
+            const el=document.getElementById("roleInfo");el.className="info-item";
+            if(myRole==="black"){el.textContent=`⚫ ${myUsername}（黑方·先手）`;el.classList.add("role-black");}
+            else if(myRole==="white"){el.textContent=`⚪ ${myUsername}（白方·后手）`;el.classList.add("role-white");}
+            else if(myRole==="spectator"){el.textContent=`👁 ${myUsername}（观战）`;el.classList.add("role-spectator");}
         }
 
-        function setConnection(state) {
+        function setConnection(state){
             document.getElementById("connDot").className="connection-dot "+state;
             const labels={connected:"已连接",disconnected:"已断开",connecting:"连接中"};
             document.getElementById("connText").textContent=labels[state]||state;
         }
 
-        function updateScoreboard(scores) {
+        function updateScoreboard(scores){
             const list=document.getElementById("scoreList");
             const empty=document.getElementById("scoreEmpty");
-            const filtered = scores.filter(s => s[1] > 0);
-            if (filtered.length === 0) {
-                empty.style.display="block"; list.innerHTML=""; return;
-            }
+            const filtered=scores.filter(s=>s[1]>0);
+            if(filtered.length===0){empty.style.display="block";list.innerHTML="";return;}
             empty.style.display="none";
-            list.innerHTML = filtered.map((s,i) => {
-                const medal = i===0?"🥇":i===1?"🥈":i===2?"🥉":"";
+            list.innerHTML=filtered.map((s,i)=>{
+                const medal=i===0?"🥇":i===1?"🥈":i===2?"🥉":"";
                 return `<div class="score-row"><span class="score-name">${medal} ${s[0]}</span><span class="score-val">${s[1]}胜</span></div>`;
             }).join("");
         }
 
-        function showToast(msg) {
+        function updateTimer(remaining, total){
+            timerRemaining=remaining; timerTotal=total;
+            const bar=document.getElementById("timerBar");
+            const text=document.getElementById("timerText");
+
+            if(remaining<0||total<=0||winner!==0){
+                bar.classList.add("hidden");
+                text.textContent=total<=0&&winner===0?"⏱ 不限时":"";
+                text.className="timer-text";
+                return;
+            }
+
+            bar.classList.remove("hidden");
+            const pct = total > 0 ? (remaining/total)*100 : 100;
+            bar.style.width=pct+"%";
+
+            bar.classList.remove("warning","danger");
+            text.className="timer-text";
+
+            if(remaining<=5){
+                bar.classList.add("danger");
+                text.classList.add("danger");
+            }else if(remaining<=10){
+                bar.classList.add("warning");
+                text.classList.add("warning");
+            }
+
+            const who = currentTurn===myColor ? "你" : (playersInfo[currentTurn]||"对手");
+            text.textContent=`⏱ ${who}的回合：${remaining}秒`;
+        }
+
+        function showToast(msg){
             const t=document.getElementById("toast");
-            t.textContent=msg; t.classList.add("show");
-            setTimeout(()=>t.classList.remove("show"), 2500);
+            t.textContent=msg;t.classList.add("show");
+            setTimeout(()=>t.classList.remove("show"),2500);
+        }
+
+        // ============================================================
+        // 投子认负
+        // ============================================================
+        function confirmResign(){
+            if(myColor===0||winner!==0||!gameStarted)return;
+            if(confirm("确定要投子认负吗？")){
+                ws.send(JSON.stringify({type:"resign"}));
+            }
+        }
+
+        // ============================================================
+        // 申请悔棋
+        // ============================================================
+        function requestUndoFromOpponent(){
+            if(myColor===0||winner!==0||!gameStarted)return;
+            ws.send(JSON.stringify({type:"undo_request"}));
+        }
+
+        function showUndoPopup(fromName){
+            document.getElementById("undoPopupText").textContent=`${fromName} 请求悔棋，是否同意？`;
+            document.getElementById("undoPopup").classList.add("show");
+        }
+
+        function respondUndo(accepted){
+            document.getElementById("undoPopup").classList.remove("show");
+            ws.send(JSON.stringify({type:"undo_response",accepted}));
         }
 
         // ============================================================
         // 设置面板
         // ============================================================
-        document.getElementById("adminPwdInput").addEventListener("input", function() {
-            const val = this.value;
-            const status = document.getElementById("adminStatus");
-            const controls = document.getElementById("adminControls");
-            if (val.length === 6) {
-                if (val === "230620") {
-                    adminUnlocked = true;
-                    status.textContent = "✅ 已解锁管理员权限";
-                    status.className = "lock-status ok";
+        document.getElementById("adminPwdInput").addEventListener("input",function(){
+            const val=this.value;
+            const status=document.getElementById("adminStatus");
+            const controls=document.getElementById("adminControls");
+            if(val.length===6){
+                if(val==="230620"){
+                    adminUnlocked=true;
+                    status.textContent="✅ 已解锁管理员权限";status.className="lock-status ok";
                     controls.classList.add("unlocked");
-                } else {
-                    adminUnlocked = false;
-                    status.textContent = "❌ 密码错误";
-                    status.className = "lock-status fail";
+                }else{
+                    adminUnlocked=false;
+                    status.textContent="❌ 密码错误";status.className="lock-status fail";
                     controls.classList.remove("unlocked");
                 }
-            } else {
-                status.textContent = "";
-                adminUnlocked = false;
-                controls.classList.remove("unlocked");
-            }
+            }else{status.textContent="";adminUnlocked=false;controls.classList.remove("unlocked");}
         });
 
-        function openSettings() {
-            document.getElementById("settingsModal").classList.add("open");
-            updateSettingsPanel();
+        function openSettings(){document.getElementById("settingsModal").classList.add("open");updateSettingsPanel();}
+        function closeSettings(){document.getElementById("settingsModal").classList.remove("open");}
+        document.getElementById("settingsModal").addEventListener("click",function(e){if(e.target===this)closeSettings();});
+
+        function updateSettingsPanel(){
+            let pt="";
+            if(playersInfo[1])pt+=`⚫ 黑方: ${playersInfo[1]}  `;
+            if(playersInfo[2])pt+=`⚪ 白方: ${playersInfo[2]}  `;
+            if(spectatorsInfo.length>0)pt+=`👁 观战: ${spectatorsInfo.map(s=>s.name).join(", ")}`;
+            document.getElementById("playerListDisplay").textContent=pt||"暂无玩家";
+            const sel=document.getElementById("swapSpectator");
+            sel.innerHTML='<option value="">选择观战者</option>';
+            spectatorsInfo.forEach(s=>{sel.innerHTML+=`<option value="${s.index}">${s.name}</option>`;});
         }
 
-        function closeSettings() {
-            document.getElementById("settingsModal").classList.remove("open");
+        function adminSwapColors(){if(!adminUnlocked)return;ws.send(JSON.stringify({type:"admin_swap_colors",password:"230620"}));}
+        function adminUndo(){if(!adminUnlocked)return;ws.send(JSON.stringify({type:"admin_undo",password:"230620"}));}
+        function adminChangeCapacity(){
+            if(!adminUnlocked)return;
+            const cap=parseInt(document.getElementById("capacityInput").value);
+            if(isNaN(cap)||cap<2){showToast("人数至少为2");return;}
+            ws.send(JSON.stringify({type:"admin_change_capacity",password:"230620",capacity:cap}));
         }
-
-        // 点击背景关闭
-        document.getElementById("settingsModal").addEventListener("click", function(e) {
-            if (e.target === this) closeSettings();
-        });
-
-        function updateSettingsPanel() {
-            // 房间信息
-            const roomEl = document.getElementById("roomInfoDisplay");
-            const playerListEl = document.getElementById("playerListDisplay");
-
-            let playerText = "";
-            if (playersInfo[1]) playerText += `⚫ 黑方: ${playersInfo[1]}  `;
-            if (playersInfo[2]) playerText += `⚪ 白方: ${playersInfo[2]}  `;
-            if (spectatorsInfo.length > 0) {
-                playerText += `👁 观战: ${spectatorsInfo.map(s=>s.name).join(", ")}`;
-            }
-            playerListEl.textContent = playerText || "暂无玩家";
-
-            // 更新观战者下拉框
-            const sel = document.getElementById("swapSpectator");
-            sel.innerHTML = '<option value="">选择观战者</option>';
-            spectatorsInfo.forEach(s => {
-                sel.innerHTML += `<option value="${s.index}">${s.name}</option>`;
-            });
+        function adminChangeTimer(){
+            if(!adminUnlocked)return;
+            const sec=parseInt(document.getElementById("timerInput").value);
+            if(isNaN(sec)||sec<0){showToast("请输入有效秒数");return;}
+            ws.send(JSON.stringify({type:"admin_change_timer",password:"230620",seconds:sec}));
         }
-
-        // 管理员操作
-        function adminSwapColors() {
-            if (!adminUnlocked) return;
-            ws.send(JSON.stringify({type:"admin_swap_colors", password:"230620"}));
+        function adminClearScores(){
+            if(!adminUnlocked)return;
+            if(!confirm("确定要清空积分榜吗？"))return;
+            ws.send(JSON.stringify({type:"admin_clear_scores",password:"230620"}));
         }
-
-        function adminUndo() {
-            if (!adminUnlocked) return;
-            ws.send(JSON.stringify({type:"admin_undo", password:"230620"}));
-        }
-
-        function adminChangeCapacity() {
-            if (!adminUnlocked) return;
-            const cap = parseInt(document.getElementById("capacityInput").value);
-            if (isNaN(cap) || cap < 2) { showToast("人数至少为2"); return; }
-            ws.send(JSON.stringify({type:"admin_change_capacity", password:"230620", capacity:cap}));
-        }
-
-        function adminClearScores() {
-            if (!adminUnlocked) return;
-            if (!confirm("确定要清空积分榜吗？")) return;
-            ws.send(JSON.stringify({type:"admin_clear_scores", password:"230620"}));
-        }
-
-        function adminSwapSpectator() {
-            if (!adminUnlocked) return;
-            const si = document.getElementById("swapSpectator").value;
-            const pc = document.getElementById("swapPlayer").value;
-            if (si === "") { showToast("请选择观战者"); return; }
-            ws.send(JSON.stringify({
-                type:"admin_swap_spectator", password:"230620",
-                spectator_index: parseInt(si), player_color: parseInt(pc),
-            }));
+        function adminSwapSpectator(){
+            if(!adminUnlocked)return;
+            const si=document.getElementById("swapSpectator").value;
+            const pc=document.getElementById("swapPlayer").value;
+            if(si===""){showToast("请选择观战者");return;}
+            ws.send(JSON.stringify({type:"admin_swap_spectator",password:"230620",spectator_index:parseInt(si),player_color:parseInt(pc)}));
         }
 
         // ============================================================
         // WebSocket
         // ============================================================
-        function startGame() {
-            drawBoard();
-            connectWS();
-        }
+        function startGame(){drawBoard();connectWS();}
 
-        function connectWS() {
-            const protocol = location.protocol==="https:"?"wss:":"ws:";
-            const url = `${protocol}//${location.host}/ws`;
+        function connectWS(){
+            const protocol=location.protocol==="https:"?"wss:":"ws:";
+            const url=`${protocol}//${location.host}/ws`;
             setConnection("connecting");
-            ws = new WebSocket(url);
-
-            ws.onopen = () => {
-                setConnection("connected");
-                reconnectDelay = 1000;
-                // 连接后立刻发送用户名
-                ws.send(JSON.stringify({type:"set_username", username: myUsername}));
-            };
-            ws.onmessage = e => handleMessage(JSON.parse(e.data));
-            ws.onclose = () => { setConnection("disconnected"); scheduleReconnect(); };
-            ws.onerror = () => ws.close();
+            ws=new WebSocket(url);
+            ws.onopen=()=>{setConnection("connected");reconnectDelay=1000;ws.send(JSON.stringify({type:"set_username",username:myUsername}));};
+            ws.onmessage=e=>handleMessage(JSON.parse(e.data));
+            ws.onclose=()=>{setConnection("disconnected");scheduleReconnect();};
+            ws.onerror=()=>ws.close();
         }
 
-        function scheduleReconnect() {
-            if (reconnectTimer) clearTimeout(reconnectTimer);
-            reconnectTimer = setTimeout(()=>{
-                connectWS();
-                reconnectDelay = Math.min(reconnectDelay*1.5, 10000);
-            }, reconnectDelay);
+        function scheduleReconnect(){
+            if(reconnectTimer)clearTimeout(reconnectTimer);
+            reconnectTimer=setTimeout(()=>{connectWS();reconnectDelay=Math.min(reconnectDelay*1.5,10000);},reconnectDelay);
         }
 
-        function handleMessage(data) {
-            switch(data.type) {
+        function handleMessage(data){
+            switch(data.type){
                 case "role_assigned":
-                    myColor=data.color; myRole=data.role;
-                    updateRoleDisplay(); break;
+                    myColor=data.color;myRole=data.role;
+                    updateRoleDisplay();break;
 
                 case "sync_state":
-                    board=data.board; currentTurn=data.current_turn;
-                    winner=data.winner; gameStarted=data.game_started;
-                    if (data.move_history && data.move_history.length>0) {
+                    board=data.board;currentTurn=data.current_turn;
+                    winner=data.winner;gameStarted=data.game_started;
+                    if(data.move_history&&data.move_history.length>0){
                         const l=data.move_history[data.move_history.length-1];
                         lastMove={row:l[0],col:l[1],color:l[2]};
-                    } else lastMove=null;
-                    drawBoard(); updateStatus();
-                    if (data.message) showToast(data.message);
+                    }else lastMove=null;
+                    drawBoard();updateStatus();
+                    if(data.message)showToast(data.message);
                     break;
 
                 case "game_start":
-                    gameStarted=true; updateStatus(); break;
+                    gameStarted=true;updateStatus();break;
 
                 case "move":
                     board[data.row][data.col]=data.color;
-                    currentTurn=data.current_turn; winner=data.winner;
+                    currentTurn=data.current_turn;winner=data.winner;
                     lastMove={row:data.row,col:data.col,color:data.color};
-                    drawBoard(); updateStatus(); break;
+                    drawBoard();updateStatus();break;
+
+                case "game_over":
+                    winner=data.winner;
+                    drawBoard();updateStatus();
+                    showToast(data.message);
+                    updateTimer(-1,0);
+                    break;
 
                 case "reset":
                     board=Array.from({length:15},()=>Array(15).fill(0));
-                    currentTurn=1; winner=0; lastMove=null;
+                    currentTurn=1;winner=0;lastMove=null;
                     gameStarted=data.game_started;
-                    drawBoard(); updateStatus();
-                    if (data.message) showToast(data.message);
+                    drawBoard();updateStatus();
+                    if(data.message)showToast(data.message);
                     break;
 
                 case "player_left":
-                    gameStarted=false; updateStatus();
-                    showToast(data.message); break;
+                    gameStarted=false;updateStatus();
+                    showToast(data.message);updateTimer(-1,0);break;
 
                 case "online_count":
                     document.getElementById("onlineInfo").textContent=
-                        `玩家: ${data.players}/2 | 观众: ${data.spectators}`; break;
+                        `玩家: ${data.players}/2 | 观众: ${data.spectators}`;break;
 
                 case "scoreboard":
-                    updateScoreboard(data.scores); break;
+                    updateScoreboard(data.scores);break;
 
                 case "player_info":
-                    playersInfo = data.players;
-                    spectatorsInfo = data.spectators;
-                    updateStatus();
-                    updateSettingsPanel();
-                    break;
+                    playersInfo=data.players;spectatorsInfo=data.spectators;
+                    updateStatus();updateSettingsPanel();break;
 
                 case "room_info":
-                    document.getElementById("roomInfoDisplay").textContent =
+                    document.getElementById("roomInfoDisplay").textContent=
                         `房间人数: ${data.current_count}/${data.max_capacity}`;
-                    document.getElementById("capacityInput").value = data.max_capacity;
+                    document.getElementById("capacityInput").value=data.max_capacity;
                     break;
+
+                case "timer_update":
+                    updateTimer(data.remaining,data.total);break;
+
+                case "timer_setting":
+                    timerTotal=data.turn_time_limit;
+                    document.getElementById("timerInput").value=data.turn_time_limit;
+                    break;
+
+                case "undo_request":
+                    showUndoPopup(data.from_name);break;
 
                 case "admin_message":
-                    showToast(data.message); break;
+                    showToast(data.message);break;
 
                 case "rejected":
-                    showToast(data.message);
-                    setConnection("disconnected");
-                    // 停止重连
-                    if (reconnectTimer) clearTimeout(reconnectTimer);
-                    break;
+                    showToast(data.message);setConnection("disconnected");
+                    if(reconnectTimer)clearTimeout(reconnectTimer);break;
 
                 case "error":
-                    console.warn("服务器:", data.message);
-                    showToast(data.message); break;
+                    console.warn("服务器:",data.message);showToast(data.message);break;
             }
         }
 
-        function requestReset() {
-            if (ws && ws.readyState===WebSocket.OPEN)
-                ws.send(JSON.stringify({type:"reset"}));
+        function requestReset(){
+            if(ws&&ws.readyState===WebSocket.OPEN)ws.send(JSON.stringify({type:"reset"}));
         }
 
-        // 响应式
-        function resizeCanvas() {
-            const maxW = Math.min(window.innerWidth-40, 600);
-            canvas.style.width=maxW+"px"; canvas.style.height=maxW+"px";
+        function resizeCanvas(){
+            const maxW=Math.min(window.innerWidth-40,600);
+            canvas.style.width=maxW+"px";canvas.style.height=maxW+"px";
         }
-        window.addEventListener("resize", resizeCanvas);
+        window.addEventListener("resize",resizeCanvas);
         resizeCanvas();
     </script>
 </body>
